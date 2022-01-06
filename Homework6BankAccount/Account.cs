@@ -42,7 +42,7 @@ namespace Homework6BankAccount
             if (this.accountClosed == true) { Console.WriteLine("Contul este inchis. Nu se pot face withdraws."); }
             else
             {
-                if (this.canWithdraw == true) { amount -= sum; Console.WriteLine($"S-a ridicat suma de {sum} RON in contul {FirstName} {LastName}."); } else { Console.WriteLine("Nu se pot face withdraws."); }
+                if (this.canWithdraw == true && sum<=amount) { amount -= sum; Console.WriteLine($"S-a ridicat suma de {sum} RON din contul {FirstName} {LastName}."); } else { Console.WriteLine("Nu se pot face withdraws."); }
             }
         }
         public Account(string firstName,string lastName)

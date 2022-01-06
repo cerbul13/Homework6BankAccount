@@ -22,11 +22,13 @@ namespace Homework6BankAccount
             gameAccount.DisplayAmount();
             gameAccount.Withdraw(50);
             gameAccount.DisplayAmount();
-            SecretAccount secretAccount = new SecretAccount("Secret", "Account");
+            SecretAccount secretAccount = new SecretAccount("Secret", "Account",account, 100);
             secretAccount.Deposit(100);
             secretAccount.DisplayAmount();
-            secretAccount.Withdraw(50);
+            account.DisplayAmount();
+            secretAccount.BuyWine(50);
             secretAccount.DisplayAmount();
+            account.DisplayAmount();
 
         }
     }

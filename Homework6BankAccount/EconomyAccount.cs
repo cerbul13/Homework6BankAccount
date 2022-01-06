@@ -10,16 +10,6 @@ namespace Homework6BankAccount
     {
         private decimal percentDeposit;
         private decimal percentWithdraw;
-        //public decimal PercentDeposit
-        //{
-        //    get { return percentDeposit; }
-        //    set { percentDeposit = value; }
-        //}
-        //public decimal PercentWithdraw
-        //{
-        //    get { return percentWithdraw; }
-        //    set { percentWithdraw = value; }
-        //}
         public EconomyAccount(string firstName,string lastName) :base (firstName,lastName)
         {
             this.percentDeposit = (decimal)0.01;
@@ -38,7 +28,7 @@ namespace Homework6BankAccount
             if (this.accountClosed == true) { Console.WriteLine("Contul este inchis. Nu se pot face withdraws."); }
             else
             {
-                if (this.canWithdraw == true) { amount -= sum; amount -= sum * percentWithdraw / 100; Console.WriteLine($"S-a ridicat suma de {sum + (sum * percentWithdraw / 100)} RON in contul {FirstName} {LastName}."); } else { Console.WriteLine("Nu se pot face withdraws."); }
+                if (this.canWithdraw == true && sum<=amount) { amount -= sum; amount -= sum * percentWithdraw / 100; Console.WriteLine($"S-a ridicat suma de {sum + (sum * percentWithdraw / 100)} RON in contul {FirstName} {LastName}."); } else { Console.WriteLine("Nu se pot face withdraws."); }
             }
         }
     }
